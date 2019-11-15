@@ -8,39 +8,51 @@ const f_ReadICCard =require('../businss/f_ReadICCard')
 
 
 
-Tf_ReadICCard = function (res,a) {
+Tf_ReadICCard = function (req,a) {
     console.log("Tf_ReadICCard")
     console.log('入参接收',res,a)
-    return f_ReadICCard.f_ReadICCard(res);
+    return f_ReadICCard.f_ReadICCard(req);
 }
 
-T9021 = function (res,a) {
-    console.log("9021")
-    console.log('入参接收',res,a)
-    return menzhen.T9021(res);
+T9201 = function (req,a) {
+    console.log("请求接口9201")
+    console.log('入参接收',req,a)
+    return menzhen.T9201(req);
 }
 
 
-T9022 = function () {
-   console.log("9022")
+T9202 = function (req,a) {
+   console.log("请求接口9202")
+    return menzhen.T9202(req);
+}
+
+T9203 = function (req,a) {
+   console.log("请求接口9203")
+    return menzhen.T9203(req);
+}
+
+
+T9024 = function(req,a){
+    return menzhen.T9024(req);
+}
+
+
+T9025 = function(req,a){
     return true;
 }
 
-
-T9024 = function(){
-    return menzhen.T9024();
-}
-
-
-T9025 = function(){
-    return true;
+T9247 = function(req,a){
+    console.log("请求接口9274")
+    return menzhen.T9247(req);
 }
 
 module.exports=
 {
     Tf_ReadICCard,
-    T9021,
-    T9022,
+    T9201,
+    T9202,
+    T9203,
     T9024,
-    T9025
+    T9025,
+    T9247,
 }

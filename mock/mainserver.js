@@ -17,10 +17,12 @@ module.exports = function (app) {
     app.post('/api/mediinsur', function (req, res) {
 
         let paramas = req.body;//接收请求数据
-        let resid  = Mock.mock({'T0|1':[-1,0]});//根据随机值返回
+        let resid  = Mock.mock({'T0|1':[0]});//根据随机值返回
+        let MediInsurCardType=paramas['MediInsurCardType']
+        console.log('卡类型',MediInsurCardType)
         resid =resid['T0']
 
-        console.log('当前参数是',resid)
+        console.log('请求参数',paramas)
 
         //判断数据是否有效
         if (typeof (paramas) !="undefined"&& paramas !=null && paramas['id']!=null&&paramas['para']!=null&&paramas['para'].length>0 ){
@@ -43,7 +45,6 @@ module.exports = function (app) {
                 //根据请求利用eval函数找到并执行对应的函数，并可进行传参和接收返回值
                 Response = eval("T.T"+interfaceNum+"("+str+","+a+")");
                 console.log(Response)
-
 
                 res.status(200).json(Response)
 
@@ -97,6 +98,7 @@ module.exports = function (app) {
 
         }
         else {
+            console.log('请求参数错误或者为空！')
             res.status(200).json('参数错误');
         }
 
