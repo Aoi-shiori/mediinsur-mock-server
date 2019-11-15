@@ -49,16 +49,9 @@ let db=Mock.mock({
 
 //读卡，需要根据卡号获取 第四位的
 f_ReadICCard=function f_ReadICCard(para, a) {
-    // console.log('para是',para,a)
-    //调用函数将参数转换为数组
-    // para =Tools.ParaToArry(para)
-    // para =T.ParaToArry(para)
-    console.log('读卡获得入参',para)
+
+    console.log('读卡获得入参:',para)
     // console.log('卡号是',  para[0])
-
-
-    // console.log('看看数据',db)
-
 
     //在db.resdata中查找卡号符合的数据并返回
     for (let i in db.resdata[0]){
@@ -68,16 +61,15 @@ f_ReadICCard=function f_ReadICCard(para, a) {
 
         //判断是否有数据
         if(current.length>0){
-            //转换数组 未带编号的是转换“~”，编号2的是转换“|”的
-            // let arry =T.ParaToArry(current)
-            let arry =T.ParaToArry2(current)
-            console.log('arry',arry)
+            //转换数组
+            let arry =T.ParaToArry(current)
+            console.log('读卡函数转换后的arry:',arry)
 
             //读取mock产生的数据中，12号的参数身份证号码，数组从0开始所以是11
             let cardnum1=arry[3]
-            console.log('卡1',cardnum1)
+            // console.log('卡1',cardnum1)
 
-            //读取入参数据中，12号的参数身份证号码，数组从0开始所以是11
+            //读取入参数据中，对应的卡号，数组从0开始
             let cardnum2=para
 
             //如果找到符合的将当前找到的数据返回
