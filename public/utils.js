@@ -12,21 +12,34 @@ function ParaToArry(data) {
         para=para.split('|')
     }
 
-    for (let o in para){
-        if(para[o].indexOf('^') != -1){
-            para[o]=para[o].split('^')
-            for(let j in para[o]){
-                if(para[o][j].indexOf('|')){
-                    para[o][j]=para[o][j].split('|')
-                    // console.log('细分项目',test[o][j])
-                }else {
-                    para[o][j]=para[o][j]
-                }
+    if(para.indexOf('%%')){
+        for (let o in para){
+            if(para[o].indexOf('%%') != -1){
+                para[o]=para[o].split('%%')
+
+            }else {
+                para[o]=para[o]
             }
-        }else {
-            para[o]=para[o]
+        }
+    }else{
+        for (let o in para){
+            if(para[o].indexOf('^') != -1){
+                para[o]=para[o].split('^')
+                for(let j in para[o]){
+                    if(para[o][j].indexOf('|')){
+                        para[o][j]=para[o][j].split('|')
+                        // console.log('细分项目',test[o][j])
+                    }else {
+                        para[o][j]=para[o][j]
+                    }
+                }
+            }else {
+                para[o]=para[o]
+            }
         }
     }
+
+
 
     return  para
 }

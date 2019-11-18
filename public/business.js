@@ -7,6 +7,7 @@ const menzhen = require('../businss/Province/menzhen')
 const f_ReadICCard =require('../businss/f_ReadICCard')
 //引用download
 const download = require('../businss/download')
+const city = require('../businss/city/menzhen')
 
 
 
@@ -79,6 +80,37 @@ T54 = function(req){
     console.log("接收到的入参为："+req)
     return download.T54(req)
 }
+
+//市医保：获取参保人信息
+T22 = function(req){
+    console.log("T54")
+    console.log("接收到的入参为："+req)
+    return city.T22(req)
+}
+
+
+//市医保：门诊/挂号预结算
+T27 = function(req){
+    console.log("T54")
+    console.log("接收到的入参为："+req)
+    return city.T27(req)
+}
+
+//市医保：门诊/挂号结算
+T28 = function(req){
+    console.log("T54")
+    console.log("接收到的入参为："+req)
+    return city.T28(req)
+}
+
+//市医保：交易确认
+T49 = function(req){
+    console.log("T54")
+    console.log("接收到的入参为："+req)
+    return city.T49(req)
+}
+
+
 
 module.exports=
 {
