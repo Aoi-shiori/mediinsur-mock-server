@@ -22,18 +22,16 @@ function ParaToArry(data) {
                 }else {
                     para[o][j]=para[o][j]
                 }
-
             }
-
         }else {
             para[o]=para[o]
         }
     }
 
-
     return  para
 }
 
+//判断参数是否在数组中存在
 function isContain(para,arry){if (para in arry){
     return true
 }else {

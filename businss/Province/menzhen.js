@@ -1,6 +1,6 @@
 ////文件说明:门诊业务
 let Mock = require('mockjs');
-const T = require('../public/utils')
+const T = require('../../public/utils')
 let db9201=Mock.mock({
     'data|1':[{
         'T0|1':[1,-1,0],

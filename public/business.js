@@ -2,7 +2,7 @@
 // let Mock = require('mockjs');
 //引用工具函数
 // const T = require('./utils')
-const menzhen = require('../businss/menzhen')
+const menzhen = require('../businss/Province/menzhen')
 // const zhuyuan =require('/businss/zhuyuan')
 const f_ReadICCard =require('../businss/f_ReadICCard')
 //引用download
