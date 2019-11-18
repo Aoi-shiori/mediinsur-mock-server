@@ -12,7 +12,7 @@ let db22=Mock.mock({
     }],
     'resdata':[{
         'T0|1':[1,-1,0],
-        T1:'$$0~success~000000000000000~0~B22923957~330109D156000005006C3E81D9B82B7A~30130907~徐亦明~1~01~1983-11-14~339005198311145913~330199~杭州市~6020116~杭州萧山园林集团有限公司~310~16~~0.0~1044.5~0~~0~~328.39~0.0~0.00~0~0~~$$',
+        T1:'$$0~~~~~330499D1560000050035266CFE6B5171%%4001914672%%徐浩庭%%1%%01%%20160116%%330402201601160619%%无%%(医)建设--南杨社区%%330402%%南湖区%%99%%000%%0%%0%%0%%%%0%%0%%0%%1606.49%%0%%0%%142.66%%0%%0%%0%%0%%0%%%%25%%0~000000011000100~100110000000000~100000000000000~A88399353$$',
         T2:'',
         T3:'',
         T4:'',
@@ -49,13 +49,13 @@ let db22=Mock.mock({
 
 });
 
-let db9202=Mock.mock({
+let db27=Mock.mock({
     'data|1':[{
         'T0|1':[1,-1,0],
     }],
     'resdata':[{
         'T0|1':[1,-1,0],
-        B22923957:'$$0~传入的费用明细自负比例有误~201911111933112205~0~0~提示信息：~2019-11-11 19:33:11~172.65|10.0|3.66|0|0.0|172.65|0.0|120.83|51.82|0.0|0.0|0|0.0|0|0.0|0.0|0|0.0|0.0|0.0|0|0|0|0|0|0|0|0^~1|0.03|0.0|0.83|0.83|^3|0.03|0.0|2.83|2.83|^~$$',
+        '330499D1560000050035266CFE6B5171':'$$0~~~~~~0~20191111 031907~134.35%%23.5%%0%%110.85%%0%%0%%31%%77.26%%108.26%%26.09%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%26.09%%0%%0~~~226727430$$',
         T2:'',
         T3:'',
         T4:'',
@@ -92,14 +92,60 @@ let db9202=Mock.mock({
 
 });
 
-let db9203=Mock.mock({
+let db28=Mock.mock({
     'data|1':[{
         'T0|1':[1,-1,0],
         'T1|1':['有参数不正确','交易成功',0],
     }],
     'resdata':[{
         'T0|1':[1,-1,0],
-        B22923957:'$$0~传入的费用明细自负比例有误~201911111933112205~0~0~提示信息：~2019-11-11 19:33:11~172.65|10.0|3.66|0|0.0|172.65|0.0|120.83|51.82|0.0|0.0|0|0.0|0|0.0|0.0|0|0.0|0.0|0.0|0|0|0|0|0|0|0|0^~1|0.03|0.0|0.83|0.83|^3|0.03|0.0|2.83|2.83|^~$$',
+        '330499D1560000050035266CFE6B5171':'$$0~~~~~0~0~20191111 031959~226727431~134.35%%23.5%%0%%110.85%%0%%0%%31%%77.26%%108.26%%26.09%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%0%%26.09%%0%%0~05%%普通门诊一般诊查费统筹优先%%25%%17.5%%.7%%7.5%%0%%06%%先自费费用%%23.5%%0%%0%%0%%23.5%%21%%统筹第一段%%85.85%%8.59%%.1%%77.26%%0~$$',
+        T2:'',
+        T3:'',
+        T4:'',
+        T5:'',
+        T6:'',
+        T7:'',
+        T8:'',
+        T9:'',
+        T10:'',
+        T11:'',
+        T12:'',
+        T13:'',
+        T14:'',
+        T15:'',
+        T16:'',
+        T17:'',
+        T18:'',
+        T19:'',
+        T20:'',
+        T21:'',
+        T22:'',
+        T23:'',
+        T24:'',
+        T25:'',
+        T26:'',
+        T27:'',
+        T28:'',
+        T29:'',
+        T30:'',
+        T31:'',
+        T32:'',
+    }]
+
+
+
+});
+
+
+let db49=Mock.mock({
+    'data|1':[{
+        'T0|1':[1,-1,0],
+        'T1|1':['有参数不正确','交易成功',0],
+    }],
+    'resdata':[{
+        'T0|1':[1,-1,0],
+        T1:'$$0~~~~~226773857$$',
         T2:'',
         T3:'',
         T4:'',
@@ -166,12 +212,12 @@ T22=function T22(para,a) {
 
 
             //读取mock产生的数据中，12号的参数身份证号码，数组从0开始所以是11
-            let sfz1=arry[11]
-            console.log('数据身份证号：',sfz1)
+            let sfz1=arry[5][0]
+            console.log('数据社会保障卡号：',sfz1)
 
             //读取mock产生的数据中，12号的参数身份证号码，数组从0开始所以是11
-            let sfz2=para[14]
-            console.log('入参身份证号：',sfz2)
+            let sfz2=para[1]
+            console.log('入参社会保障卡号：',sfz2)
 
             //如果找到符合的将当前找到的数据返回
             if(sfz1 === sfz2){
@@ -193,17 +239,17 @@ T22=function T22(para,a) {
 
 
 //读卡，需要根据卡号获取 第四位的
-T27=function T9202(para, a) {
+T27=function T27(para, a) {
 
-    console.log('T9202预结算入参:',para)
+    console.log('T27预结算入参:',para)
     para=T.ParaToArry(para)
-    console.log('T9202社会保障卡卡号',  para[4])
+    console.log('T27社会保障卡卡号',  para[1])
     console.log('转换后结果',  para)
-    // let res = db9202.resdata[0][para[4]]
-    let res = db9202.resdata[0][para[4]]
-    console.log('入参的卡号',para[4])
+    // let res = db27.resdata[0][para[4]]
+    let res = db27.resdata[0][para[1]]
+    console.log('入参的卡号',para[1])
     if( res != null){
-        console.log('T9202预结算返回参数',  res)
+        console.log('T27预结算返回参数',  res)
         let pp=T.ParaToArry(res)
         console.log('参数是什么',pp)
         return res
@@ -214,10 +260,10 @@ T27=function T9202(para, a) {
 
 
     //在db.resdata中查找卡号符合的数据并返回
-    // for (let i in db9202.resdata[0]){
+    // for (let i in db27.resdata[0]){
     //     // console.log('打印一下',i,db.resdata[0][i])
     //     //当前循环到的
-    //     let current = db9202.resdata[0][i]
+    //     let current = db27.resdata[0][i]
     //
     //     //判断是否有数据
     //     if(current.length>0){
@@ -251,17 +297,17 @@ T27=function T9202(para, a) {
 
 
 //读卡，需要根据卡号获取 第四位的
-T28=function T9203(para, a) {
+T28=function T28(para, a) {
 
-    console.log('T9203预结算入参:',para)
+    console.log('T28预结算入参:',para)
     para=T.ParaToArry(para)
-    // console.log('T9203社会保障卡卡号',  para[4])
+    // console.log('T28社会保障卡卡号',  para[4])
     // console.log('转换后结果',  para)
-    // let res = db9203.resdata[0][para[4]]
-    let res = db9202.resdata[0][para[4]]
-    console.log('入参的卡号',para[4])
+    // let res = db28.resdata[0][para[4]]
+    let res = db28.resdata[0][para[1]]
+    console.log('T28入参的卡号',para[1])
     if( res != null){
-        console.log('T9203预结算返回参数',  res)
+        console.log('T28预结算返回参数',  res)
         return res
     }else {
         return '$$-1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$'
@@ -306,14 +352,47 @@ T28=function T9203(para, a) {
 }
 
 T49=function(para) {
-    console.log('T9247交易作废入参:',para)
+    console.log('T49交易作废入参:',para)
     para=T.ParaToArry(para)
-    // console.log('T9203社会保障卡卡号',  para[4])
+    console.log('T49入参医保交易流水号',  para[6])
     // console.log('转换后结果',  para)
-    let res  = Mock.mock({'T0|1':['$$0~交易成功$$','$$-1~交易失败$$']});//根据随机值返回
-    res=res['T0']
-    console.log('T9247交易作废返回参数:',res)
-    return res
+
+    //在db49.resdata中查找卡号符合的数据并返回
+    for (let i in db49.resdata[0]){
+        // console.log('打印一下',i,db.resdata[0][i])
+        //当前循环到的
+        let current = db49.resdata[0][i]
+        // let test =T.isContain('春天',['春天','02','春天'])
+        // console.log('测试函数',test)
+        //判断是否有数据
+        if(current.length>0){
+            //转换数组
+            let arry =T.ParaToArry(current)
+            console.log('读卡函数转换后的arry:',arry)
+
+            //读取mock产生的数据中，12号的参数身份证号码，数组从0开始所以是11
+            let cardnum1=arry[5]
+            // console.log('卡1',cardnum1)
+
+            //读取入参数据中，对应的卡号，数组从0开始
+            let cardnum2=para[5]
+            console.log('读卡函数转换后的para:',para)
+            console.log('读卡函数转换后的cardnum2:',cardnum2)
+
+            //如果找到符合的将当前找到的数据返回
+            if(cardnum1==cardnum2){
+                // console.log('22找到并返回返回参数',current)
+                return current;
+
+            }else {
+                let re ='$$-1&&'
+                // res.status(200).json('$$-1&&');
+                return re
+            }
+        }
+
+
+    }
 }
 
 

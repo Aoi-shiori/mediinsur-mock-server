@@ -83,7 +83,7 @@ T54 = function(req){
 
 //市医保：获取参保人信息
 T22 = function(req){
-    console.log("T54")
+    console.log("T22")
     console.log("接收到的入参为："+req)
     return city.T22(req)
 }
@@ -121,6 +121,10 @@ module.exports=
     T9024,
     T9025,
     T9247,
+    T22,
+    T27,
+    T28,
+    T49,
     T75,
     T77,
     T78,

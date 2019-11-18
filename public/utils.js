@@ -44,12 +44,27 @@ function ParaToArry(data) {
     return  para
 }
 
-//判断参数是否在数组中存在
-function isContain(para,arry){if (para in arry){
-    return true
-}else {
-    return false
-}}
+//判断参数是否在数组中存在,必须传入纯数值数组或者纯字符串的数组
+function isContain(para,arry){
+   if(typeof (arry[0])!="string"){
+       if (para in arry)
+       {
+           return true
+       }else {
+           return false
+        }
+
+    }else {
+       for(let i in arry){
+           // if(arry[i].indexOf(para)>-1){
+           if(para ==arry[i]){
+               return true
+           }else {
+               return false
+           }
+       }
+   }
+}
 
 
 
