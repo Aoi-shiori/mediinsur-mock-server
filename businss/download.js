@@ -1,6 +1,6 @@
 //医保相关下载业务
 let Mock = require('mockjs');
-const until = require('../public/utils')
+const util = require('../public/utils')
 
 var backData = Mock.mock({
             'department'
@@ -114,11 +114,11 @@ var backData = Mock.mock({
 
 //定点医疗结构下载
 T75 = function T75(para) {
-    para = until.ParaToArry(para)
+    para = util.ParaToArry(para)
     console.log("转化后的入参为："+para)
     if (para != null){
         //卡类型
-        let isTrue= until.isContain(para[0],[0,1,2])
+        let isTrue= util.isContain(para[0],[0,1,2])
         if(isTrue && para[4]!= null)
             return backData['department']
         else{
@@ -132,13 +132,12 @@ T75 = function T75(para) {
 
 //中心字典下载
 T77 = function T77(para){
-    para = until.ParaToArry(para)
+    para = util.ParaToArry(para)
     console.log("转化后的入参为："+para)
     //卡类型
-    let isTrue= until.isContain(para[0],[0,1,2])
-
+    let isTrue= util.isContain(para[0],[0,1,2])
     //费用类别
-    var isClassify = para[4]
+    var isClassify = util.isContain(para[4],[1,2])
     console.log("是否包含："+isTrue+" "+isClassify)
     if (para != null){
         if(isTrue && isClassify){
@@ -160,9 +159,9 @@ T77 = function T77(para){
 
 //疾病下载
 T78 = function T78(para){
-    para = until.ParaToArry(para)
+    para = util.ParaToArry(para)
     console.log("转化后的入参为："+para)
-    let isTrue= until.isContain(para[0],[0,1,2])
+    let isTrue= util.isContain(para[0],[0,1,2])
     if (para != null){
         if(isTrue && para[4]!= null){
             if(para[4] == '0'){
@@ -183,10 +182,10 @@ T78 = function T78(para){
 
 //药品诊疗目录下载
 T54 = function T54(para){
-    para = until.ParaToArry(para)
-    let isTrue= until.isContain(para[0],[0,1,2])
+    para = util.ParaToArry(para)
+    let isTrue= util.isContain(para[0],[0,1,2])
     //药品诊疗类别
-    var type = para[4]
+    var type = util.isContain(para[4],[0,1,2])
     if(para!=null){
         if(isTrue && type && para[5]!= null){
             if(type == '0'){
