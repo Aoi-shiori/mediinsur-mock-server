@@ -183,6 +183,7 @@ T78 = function T78(para){
 //药品诊疗目录下载
 T54 = function T54(para){
     para = util.ParaToArry(para)
+    console.log("转化后的参数为："+para)
     let isTrue= util.isContain(para[0],[0,1,2])
     //药品诊疗类别
     var type = util.isContain(para[4],[0,1,2])
