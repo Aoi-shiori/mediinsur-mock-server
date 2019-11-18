@@ -77,7 +77,7 @@ T78 = function(req){
 //疾病下载
 T54 = function(req){
     console.log("T54")
-    console.log("接收到的入参为："+req)
+    // console.log("接收到的入参为："+req)
     return download.T54(req)
 }
 
