@@ -5,6 +5,8 @@
 const menzhen = require('../businss/menzhen')
 // const zhuyuan =require('/businss/zhuyuan')
 const f_ReadICCard =require('../businss/f_ReadICCard')
+//引用download
+const download = require('../businss/download')
 
 
 
@@ -17,7 +19,10 @@ Tf_ReadICCard = function (req,a) {
 T9201 = function (req,a) {
     console.log("请求接口9201")
     console.log('入参接收',req,a)
-    return menzhen.T9201(req);
+    // return menzhen.T9201(req);
+    let res =menzhen.T9201(req)
+
+    return res
 }
 
 
@@ -46,6 +51,35 @@ T9247 = function(req,a){
     return menzhen.T9247(req);
 }
 
+
+//定点医疗结构下载
+T75 = function(req){
+    console.log("T75")
+    console.log("接收到的入参为："+req)
+    return download.T75(req)
+}
+
+//中心字典下载
+T77 = function(req){
+    console.log("T77")
+    console.log("接收到的入参为："+req)
+    return download.T77(req)
+}
+
+//疾病下载
+T78 = function(req){
+    console.log("T77")
+    console.log("接收到的入参为："+req)
+    return download.T78(req)
+}
+
+//疾病下载
+T54 = function(req){
+    console.log("T54")
+    console.log("接收到的入参为："+req)
+    return download.T54(req)
+}
+
 module.exports=
 {
     Tf_ReadICCard,
@@ -55,4 +89,8 @@ module.exports=
     T9024,
     T9025,
     T9247,
+    T75,
+    T77,
+    T78,
+    T54
 }

@@ -34,10 +34,15 @@ function ParaToArry(data) {
     return  para
 }
 
-
+function isContain(para,arry){if (para in arry){
+    return true
+}else {
+    return false
+}}
 
 
 
 module.exports = {
     ParaToArry,
+    isContain,
 };

@@ -156,23 +156,26 @@ T9201=function T9201(para,a) {
         if(current.length>0){
             //转换数组
             let arry =T.ParaToArry(current)
-            // console.log('9201转换后的结果',arry)
+             console.log('9201转换后的结果',arry)
             console.log('9201长度',arry.length)
 
 
             //读取mock产生的数据中，12号的参数身份证号码，数组从0开始所以是11
             let sfz1=arry[11]
+            console.log('数据身份证号：',sfz1)
 
             //读取mock产生的数据中，12号的参数身份证号码，数组从0开始所以是11
             let sfz2=para[14]
+            console.log('入参身份证号：',sfz2)
 
             //如果找到符合的将当前找到的数据返回
-            if(sfz1==sfz2){
-                // console.log('9201找到并返回返回参数',current)
+            if(sfz1 === sfz2){
+                console.log('9201找到并返回返回参数',current)
                 return current;
 
             }else {
-                let re ='$$-1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&&'
+                console.log('9201未找到并返回返回参数')
+                let re ="$$-1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$";
                 // res.status(200).json('$$-1&&');
                 return re
             }
@@ -189,9 +192,10 @@ T9202=function T9202(para, a) {
 
     console.log('T9202预结算入参:',para)
     para=T.ParaToArry(para)
-    // console.log('T9202社会保障卡卡号',  para[4])
-    // console.log('转换后结果',  para)
-    let res = db9202.resdata[0][para[4]]
+    console.log('T9202社会保障卡卡号',  para[4])
+    console.log('转换后结果',  para)
+    // let res = db9202.resdata[0][para[4]]
+    let res = db9202.resdata[0][para[6]]
 
     if( res != null){
         console.log('T9202预结算返回参数',  res)
@@ -199,7 +203,7 @@ T9202=function T9202(para, a) {
         console.log('参数是什么',pp)
         return res
     }else {
-        return '$$-1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&&'
+        return '$$-1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$'
         console.log('未找到病人')
     }
 
@@ -248,12 +252,13 @@ T9203=function T9203(para, a) {
     para=T.ParaToArry(para)
     // console.log('T9203社会保障卡卡号',  para[4])
     // console.log('转换后结果',  para)
-    let res = db9203.resdata[0][para[4]]
+    // let res = db9203.resdata[0][para[4]]
+    let res = db9203.resdata[0][para[6]]
     if( res != null){
         console.log('T9203预结算返回参数',  res)
         return res
     }else {
-        return '$$-1&&'
+        return '$$-1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$'
         console.log('未找到病人')
     }
 
