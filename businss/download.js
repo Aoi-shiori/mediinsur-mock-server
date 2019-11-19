@@ -143,9 +143,9 @@ T77 = function T77(para){
         if(cardType && isClassify){
             switch (para[4]) {
                 case '1':
-                    return backData['dictionary_classType'];
+                    return backData['dictionary_classType']
                 case '2':
-                    return backData['dictionary_feeType'];
+                    return backData['dictionary_feeType']
             }
         }
         else {
@@ -189,20 +189,17 @@ T54 = function T54(para){
     var type = util.isContain(para[4],[0,1,2])
     if(para != ""){
         if(cardType && type && para[5]!= ""){
-            if(type == '0'){
-                return backData['diagnoseType_all']
-            }
-            else if(type == '1'){
-                return backData['diagnoseType_medicine']
-            }
-            else if(type == '2'){
-                return backData['diagnoseType_diagnose']
-            }
-            else {
-                return backData['diagnoseType_other']
+            switch(para[4]){
+                default:
+                    return backData['diagnoseType_other']
+                case '0':
+                    return backData['diagnoseType_all']
+                case '1':
+                    return backData['diagnoseType_medicine']
+                case '2':
+                    return backData['diagnoseType_diagnose']
             }
         }
-
         else {
             return "传参错误，请检查传入数据！"
         }
