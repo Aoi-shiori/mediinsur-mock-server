@@ -116,10 +116,10 @@ var backData = Mock.mock({
 T75 = function T75(para) {
     para = util.ParaToArry(para)
     console.log("转化后的入参为："+para)
-    if (para != null){
+    if (para != ""){
         //卡类型
-        let isTrue= util.isContain(para[0],[0,1,2])
-        if(isTrue && para[4]!= null)
+        let cardType= util.isContain(para[0],[0,1,2])
+        if(cardType && para[4]!= "")
             return backData['department']
         else{
             return "传参有误，请检查输入参数"
@@ -135,12 +135,12 @@ T77 = function T77(para){
     para = util.ParaToArry(para)
     console.log("转化后的入参为："+para)
     //卡类型
-    let isTrue= util.isContain(para[0],[0,1,2])
+    let cardType= util.isContain(para[0],[0,1,2])
     //费用类别
     var isClassify = util.isContain(para[4],[1,2])
-    console.log("是否包含："+isTrue+" "+isClassify)
-    if (para != null){
-        if(isTrue && isClassify){
+    console.log("是否包含："+cardType+" "+isClassify)
+    if (para != ""){
+        if(cardType && isClassify){
             switch (para[4]) {
                 case '1':
                     return backData['dictionary_classType'];
@@ -161,9 +161,9 @@ T77 = function T77(para){
 T78 = function T78(para){
     para = util.ParaToArry(para)
     console.log("转化后的入参为："+para)
-    let isTrue= util.isContain(para[0],[0,1,2])
-    if (para != null){
-        if(isTrue && para[4]!= null){
+    let cardType= util.isContain(para[0],[0,1,2])
+    if (para != ""){
+        if(cardType && para[4]!= ""){
             if(para[4] == '0'){
                 return backData['disease_default']
             }
@@ -184,11 +184,11 @@ T78 = function T78(para){
 T54 = function T54(para){
     para = util.ParaToArry(para)
     console.log("转化后的参数为："+para)
-    let isTrue= util.isContain(para[0],[0,1,2])
+    let cardType= util.isContain(para[0],[0,1,2])
     //药品诊疗类别
     var type = util.isContain(para[4],[0,1,2])
-    if(para!=null){
-        if(isTrue && type && para[5]!= null){
+    if(para != ""){
+        if(cardType && type && para[5]!= ""){
             if(type == '0'){
                 return backData['diagnoseType_all']
             }

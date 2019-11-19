@@ -8,6 +8,8 @@ const f_ReadICCard =require('../businss/f_ReadICCard')
 //引用download
 const download = require('../businss/download')
 const city = require('../businss/city/menzhen')
+const mobile_menzhen = require('../businss/ydyb/menzhen')
+
 
 
 
@@ -110,7 +112,34 @@ T49 = function(req){
     return city.T49(req)
 }
 
+//移动医保-获取参保人基本信息
+T8001 = function(req){
+    console.log("T8001")
+    console.log("接收到的入参为："+req)
+    return mobile_menzhen.T8001(req)
+}
 
+//移动医保-医生处方上传
+T8002 = function(req){
+    console.log("T8002")
+    console.log("接收到的入参为："+req)
+    return mobile_menzhen.T8002(req)
+}
+
+
+//移动医保-获取处方支付结果
+T8004 = function(req){
+    console.log("T8004")
+    console.log("接收到的入参为："+req)
+    return  mobile_menzhen.T8004(req)
+}
+
+//移动医保-退费
+T8005 = function(req){
+    console.log("T8005")
+    console.log("接收到的入参为："+req)
+    return mobile_menzhen.T8005(req)
+}
 
 module.exports=
 {
@@ -128,5 +157,10 @@ module.exports=
     T75,
     T77,
     T78,
-    T54
+    T54,
+    T8001,
+    T8002,
+    T8004,
+    T8005
+
 }
