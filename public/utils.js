@@ -77,9 +77,26 @@ function isContain(para,arry){
 //    }
 // }
 
-
+//返回当前时间
+function nowtime(){
+    //今天的时间
+    let date = new Date();
+    date.setTime(date.getTime());
+    let nowtime = date.getFullYear()+"-" + (date.getMonth()+1) + "-" + date.getDate()+' '+date.getHours()+':'+date.getMinutes()+':'+date.getSeconds()+'.'+date.getMilliseconds();
+    // console.log(nowtime)
+    return nowtime
+    // //昨天的时间
+    // var day1 = new Date();
+    // day1.setDate(day1.getDate() - 1);
+    // var s1 = day1.format("yyyy-MM-dd");
+    // //前天的时间
+    // var day3 = new Date();
+    // day2.setDate(day2.getDate() - 2);
+    // var s3 = day2.format("yyyy-MM-dd");
+}
 
 module.exports = {
     ParaToArry,
     isContain,
+    nowtime,
 };

@@ -1,7 +1,7 @@
 //文件说明：主接收请求并分发
 let Mock = require('mockjs');
 //引用工具函数
-const Tools1 =require('../public/utils')
+const utils =require('../public/utils')
 //const T9021 = require("../datas/9021");
 const T = require("../public/business")
 // let T9021 =require('../datas/9021')
@@ -20,7 +20,7 @@ module.exports = function (app) {
         let paramas = req.body;//接收请求数据
         let resid  = Mock.mock({'T0|1':[0]});//根据随机值返回
         let MediInsurCardType=paramas['MediInsurCardType']
-        console.log('-----------------------------'+paramas['id']+'号交易开始---------------------------------------')
+        console.log('----------------------------'+utils.nowtime()+'---'+paramas['id']+'号交易开始---------------------------------------')
         console.log('接口请求参数',paramas)
         resid =resid['T0']
 
@@ -72,6 +72,7 @@ module.exports = function (app) {
 
                 }
 
+
                 try{
                     //根据请求利用eval函数找到并执行对应的函数，并可进行传参和接收返回值
                     let Response = eval("T.T"+interfaceNum+"("+str+","+a+")");
@@ -80,17 +81,16 @@ module.exports = function (app) {
                     console.log('返回参数:',Response)
                     res.status(200).json(Response)
                 }catch (err) {
-                    console.log('返回参数:发生错误：'+interfaceNum+'该交易未添加')
+                    console.log('返回参数:发生错误：'+interfaceNum+'交易未添加')
                     let re='发生错误：'+interfaceNum+'交易未添加'
                     res.status(200).json(re)
                 }finally {
                     // let re='因为发生错误交易结束'
                     // res.status(200).json(re)
-                    console.log('因为发生错误交易结束')
+                    console.log('交易完成')
                 }
 
-
-                console.log('-----------------------------'+paramas['id']+'号交易结束---------------------------------------')
+                console.log('-----------------------------'+utils.nowtime()+'---'+paramas['id']+'号交易结束---------------------------------------')
 
             }else {
                 let re='$$'+resid+'$$'
