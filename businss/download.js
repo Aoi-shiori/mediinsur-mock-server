@@ -143,9 +143,9 @@ T77 = function T77(para){
         if(cardType && isClassify){
             switch (para[4]) {
                 case '1':
-                    return backData['dictionary_classType']
+                    return backData['dictionary_classType'];
                 case '2':
-                    return backData['dictionary_feeType']
+                    return backData['dictionary_feeType'];
             }
         }
         else {
@@ -191,13 +191,14 @@ T54 = function T54(para){
         if(cardType && type && para[5]!= ""){
             switch(para[4]){
                 default:
-                    return backData['diagnoseType_other']
+                    return backData['diagnoseType_other'];
+                    break;
                 case '0':
-                    return backData['diagnoseType_all']
+                    return backData['diagnoseType_all'];
                 case '1':
-                    return backData['diagnoseType_medicine']
+                    return backData['diagnoseType_medicine'];
                 case '2':
-                    return backData['diagnoseType_diagnose']
+                    return backData['diagnoseType_diagnose'];
             }
         }
         else {
