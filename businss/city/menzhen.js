@@ -362,7 +362,7 @@ T49=function(para) {
         // console.log('打印一下',i,db.resdata[0][i])
         //当前循环到的
         let current = db49.resdata[0][i]
-        // let test =T.isContain('春天',['春天','02','春天'])
+        // let test =T.isContain(1,['22',1,'11'])
         // console.log('测试函数',test)
         //判断是否有数据
         if(current.length>0){
