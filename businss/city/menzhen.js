@@ -354,7 +354,8 @@ T28=function T28(para, a) {
 T49=function(para) {
     console.log('T49交易作废入参:',para)
     para=T.ParaToArry(para)
-    console.log('T49入参医保交易流水号',  para[6])
+    console.log('T49交易作废转换后入参:',para)
+    console.log('T49医保交易流水号：',  para[5])
     // console.log('转换后结果',  para)
 
     //在db49.resdata中查找卡号符合的数据并返回
@@ -368,16 +369,19 @@ T49=function(para) {
         if(current.length>0){
             //转换数组
             let arry =T.ParaToArry(current)
-            console.log('读卡函数转换后的arry:',arry)
+            console.log('转换后的入参:',para)
+            console.log('转换后的数据库数据:',arry)
+
 
             //读取mock产生的数据中，12号的参数身份证号码，数组从0开始所以是11
-            let cardnum1=arry[5]
-            // console.log('卡1',cardnum1)
+
 
             //读取入参数据中，对应的卡号，数组从0开始
             let cardnum2=para[5]
-            console.log('读卡函数转换后的para:',para)
-            console.log('读卡函数转换后的cardnum2:',cardnum2)
+            console.log('医保交易流水号-入参:',cardnum2)
+
+            let cardnum1=arry[5]
+            console.log('医保交易流水号-数据库匹配到:',cardnum1)
 
             //如果找到符合的将当前找到的数据返回
             if(cardnum1==cardnum2){

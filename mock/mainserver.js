@@ -16,13 +16,13 @@ module.exports = function (app) {
     //新增一条数据post
     app.post('/api/mediinsur', function (req, res) {
 
+
         let paramas = req.body;//接收请求数据
         let resid  = Mock.mock({'T0|1':[0]});//根据随机值返回
         let MediInsurCardType=paramas['MediInsurCardType']
-        console.log('卡类型',MediInsurCardType)
+        console.log('-----------------------------'+paramas['id']+'号交易开始---------------------------------------')
+        console.log('接口请求参数',paramas)
         resid =resid['T0']
-
-        console.log('请求参数',paramas)
 
         //判断数据是否有效
         if (typeof (paramas) !="undefined"&& paramas !=null && paramas['id']!=null&&paramas['para']!=null&&paramas['para'].length>0 ){
@@ -32,64 +32,66 @@ module.exports = function (app) {
 
                 //取出请求的医保接口id
                 let interfaceNum = paramas["id"]
-                console.log('接口id',interfaceNum)
+                console.log('请求的接口id:',interfaceNum,'卡类型:',MediInsurCardType,)
 
                 //取出请求参数
                 let para =paramas['para']
-                //调用switch函数
-                //let Response =Tools1.Mdswitch(interfaceNum,para)
-                let Response = "";
+
+                //序列为字符串
                 let str = JSON.stringify(para);
                 let a =111;
 
-                //根据请求利用eval函数找到并执行对应的函数，并可进行传参和接收返回值
-                Response = eval("T.T"+interfaceNum+"("+str+","+a+")");
-                console.log(Response)
 
-                res.status(200).json(Response)
+                // 代码定义规范：前两位 00-全国医保 10-省级医保 大于20的为市级医保
+                // 医保代码	医保名称
+                // 1001	浙江省一卡通
+                // 1002	浙江省移动
+                // 2101	嘉兴市医保
+                // 2102	嘉兴市一卡通
+                // 2103	嘉兴市市民卡医保
+
+                if(MediInsurCardType==='1001'){
+                    // 1001	浙江省一卡通
+                    console.log('请求的医保类型：1001\t浙江省一卡通')
+
+                }else if(MediInsurCardType==='1002'){
+                    // 1002	浙江省移动
+                    console.log('请求的医保类型：1002\t浙江省移动')
+
+                }else if(MediInsurCardType==='2101'){
+                    // 2101	嘉兴市医保
+                    console.log('请求的医保类型：2101\t嘉兴市医保')
+
+                }else if(MediInsurCardType==='2102'){
+                    // 2102	嘉兴市一卡通
+                    console.log('请求的医保类型：2102\t嘉兴市一卡通')
+
+                }else if(MediInsurCardType==='2103'){
+                    // 2103	嘉兴市市民卡医保
+                    console.log('请求的医保类型：2103\t嘉兴市市民卡医保')
+
+                }
+
+                try{
+                    //根据请求利用eval函数找到并执行对应的函数，并可进行传参和接收返回值
+                    let Response = eval("T.T"+interfaceNum+"("+str+","+a+")");
 
 
+                    console.log('返回参数:',Response)
+                    res.status(200).json(Response)
+                }catch (err) {
+                    console.log('返回参数:发生错误：'+interfaceNum+'该交易未添加')
+                    let re='发生错误：'+interfaceNum+'交易未添加'
+                    res.status(200).json(re)
+                }finally {
+                    // let re='因为发生错误交易结束'
+                    // res.status(200).json(re)
+                    console.log('因为发生错误交易结束')
+                }
 
-            //     //调用函数将参数转换为数组
-            //     para =Tools.Tools(para)
-            //     // console.log('请求参数转换结果是',para)
-            //     // console.log('卡号是',  para[0])
-            //
-            //
-            //     console.log('看看数据',db)
-            //
-            //
-            //     //在db.resdata中查找卡号符合的数据并返回
-            //     for (let i in db.resdata[0]){
-            //         // console.log('打印一下',i,db.resdata[0][i])
-            //         //当前循环到的
-            //         let current = db.resdata[0][i]
-            //
-            //         //判断是否有数据
-            //         if(current.length>0){
-            //             //转换数组
-            //             let arry =Tools.Tools(current)
-            //
-            //             //读取mock产生的数据中，12号的参数身份证号码，数组从0开始所以是11
-            //             let sfz1=arry[11]
-            //
-            //             //读取mock产生的数据中，12号的参数身份证号码，数组从0开始所以是11
-            //             let sfz2=para[14]
-            //
-            //             //如果找到符合的将当前找到的数据返回
-            //             if(sfz1==sfz2){
-            //                 console.log('9201找到并返回返回参数',current)
-            //                 res.status(200).json(current);
-            //
-            //             }else {
-            //
-            //                 res.status(200).json('$$-1&&');
-            //             }
-            //         }
-            //
-            //
-            //     }
-            //
+
+                console.log('-----------------------------'+paramas['id']+'号交易结束---------------------------------------')
+
             }else {
                 let re='$$'+resid+'$$'
                 res.status(200).json(re);
