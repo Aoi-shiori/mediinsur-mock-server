@@ -77,7 +77,6 @@ module.exports = function (app) {
                     //根据请求利用eval函数找到并执行对应的函数，并可进行传参和接收返回值
                     let Response = eval("T.T"+interfaceNum+"("+str+","+a+")");
 
-
                     console.log('返回参数:',Response)
                     res.status(200).json(Response)
                 }catch (err) {
@@ -106,5 +105,7 @@ module.exports = function (app) {
 
 
     });
+
+
 
 }
