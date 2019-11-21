@@ -10,7 +10,7 @@ $$02~3300000101205506575726$$
  "TransOper":"DBA",
  "OrgsCode":"00050",
  "OrgsName":"CESHI",
- "TransNo":"",
+ "TransNo":"T01",
  "TransRandom":""
  "TransData":{
  	"CardType":"02",
