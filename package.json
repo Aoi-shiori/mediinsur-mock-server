@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./bin/www",
+    "dev": "node ./index.js",
     "build": "webpack --progress --watch --color",
     "mock": "node ./mock/mode2/mockServer"
   },

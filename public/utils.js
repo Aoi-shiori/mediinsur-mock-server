@@ -97,8 +97,15 @@ function nowtime(){
     //今天的时间
     let date = new Date();
     date.setTime(date.getTime());
-    let nowtime = date.getFullYear()+"-" + (date.getMonth()+1) + "-" + date.getDate()+' '+date.getHours()+':'+date.getMinutes()+':'+date.getSeconds()+'.'+date.getMilliseconds();
+    let nowtime = add0(date.getFullYear().toString())+"-" + add0((date.getMonth()+1).toString()) + "-" + add0(date.getDate().toString())+' '+add0(date.getHours().toString())+':'+add0(date.getMinutes().toString())+':'+add0(date.getSeconds().toString())+'.'+add0(date.getMilliseconds().toString());
     // console.log(nowtime)
+    function add0(time) {
+        if(time.length<=1){
+           time ='0'+time
+        }
+        return  time
+
+    }
     return nowtime
     // //昨天的时间
     // var day1 = new Date();

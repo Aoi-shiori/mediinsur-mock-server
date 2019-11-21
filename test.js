@@ -249,20 +249,22 @@ let tt = ['330499100001',
 //
 // }
 
-let list={'aa':'',"bb":''}
-for (let j in tt[28]){
-    for(let i in tt[28][j]){
-        // console.log('当前i',i)
-        // console.log('参数',tt[28][j][4])
-
-        list.aa=tt[28][j][4]
-        list.bb=tt[28][j][7]
-
-    }
-    console.log(list)
-
-}
+// let list={'aa':'',"bb":''}
+// for (let j in tt[28]){
+//     for(let i in tt[28][j]){
+//         // console.log('当前i',i)
+//         // console.log('参数',tt[28][j][4])
+//
+//         list.aa=tt[28][j][4]
+//         list.bb=tt[28][j][7]
+//
+//     }
+//     console.log(list)
+//
+// }
 
 
 // console.log('转换后数据',list)
+let a =T.nowtime()
+console.log(a)
 
