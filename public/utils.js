@@ -14,7 +14,7 @@ function ParaToArry(data) {
                 para[j]=para[j].split('^')
 
                 for(let i in para[j]){
-                    if(para[j][i].indexOf('%%')){
+                    if(para[j][i].indexOf('%%')!=-1){
                         para[j][i]=para[j][i].split('%%')
                         // console.log('细分项目',test[o][j])
                     }else {
