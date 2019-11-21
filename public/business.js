@@ -30,24 +30,24 @@ T9201 = function (req,a) {
 
 
 T9202 = function (req,a) {
-   console.log("分发T9022")
+   console.log("分发T9202")
     return menzhen.T9202(req);
 }
 
 T9203 = function (req,a) {
-   console.log("分发T9023")
+   console.log("分发T9203")
     return menzhen.T9203(req);
 }
 
 
 T9024 = function(req,a){
-    console.log("分发T9024")
+    console.log("分发T9204")
     return menzhen.T9024(req);
 }
 
 
 T9025 = function(req,a){
-    console.log("分发T9025")
+    console.log("分发T9205")
     return true;
 }
 

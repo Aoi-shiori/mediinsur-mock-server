@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
 //跨域访问，允许接受跨域请求
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -17,7 +16,7 @@ app.all('*', function(req, res, next) {
 })
 
 require('./mock/user')(app); //user数据
-require('./mock/mainserver')(app); //9201接口測試数据
+require('./mock/mainserver')(app); //医保接口測試数据
 
 
 
