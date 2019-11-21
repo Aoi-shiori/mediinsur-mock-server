@@ -118,7 +118,7 @@ T75 = function T75(para) {
     console.log("转化后的入参为："+para)
     if (para != ""){
         //卡类型
-        let cardType= util.isContain(para[0],[0,1,2])
+        let cardType= util.isContain(para[0],['0','1','2'])
         if(cardType && para[4]!= "")
             return backData['department']
         else{
@@ -135,9 +135,9 @@ T77 = function T77(para){
     para = util.ParaToArry(para)
     console.log("转化后的入参为："+para)
     //卡类型
-    let cardType= util.isContain(para[0],[0,1,2])
+    let cardType= util.isContain(para[0],['0','1','2'])
     //费用类别
-    var isClassify = util.isContain(para[4],[1,2])
+    var isClassify = util.isContain(para[4],['1','2'])
     console.log("是否包含："+cardType+" "+isClassify)
     if (para != ""){
         if(cardType && isClassify){
@@ -161,7 +161,7 @@ T77 = function T77(para){
 T78 = function T78(para){
     para = util.ParaToArry(para)
     console.log("转化后的入参为："+para)
-    let cardType= util.isContain(para[0],[0,1,2])
+    let cardType= util.isContain(para[0],['0','1','2'])
     if (para != ""){
         if(cardType && para[4]!= ""){
             if(para[4] == '0'){
