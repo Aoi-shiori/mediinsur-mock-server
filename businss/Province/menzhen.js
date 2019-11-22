@@ -132,6 +132,10 @@ let db9203=Mock.mock({
 
 });
 
+var backData = {
+    'menzhen_refund':'$$0~~0~201911191056134877~2019-11-19 10:56:14~-30|-15|0|0|0|-12.3|-17.7|-12.3|0|0|0|0|0|0|0|0|0|' +
+        '-15|0|-2.7|0|0|0|0|0|0|0|0^$$'
+}
 
 
 T9201=function T9201(para,a) {
@@ -301,9 +305,23 @@ T9203=function T9203(para, a) {
 
 }
 
-T9204=function() {
-console.log("9204")
+//门诊退费
+T9204=function(para) {
+// console.log("9204")
+    para = T.ParaToArry(para)
+    if(para.length <= 11){
+        if(para[0] != "" && para[1]!= "" && para[2]!= "" && para[3]!= "" && para[6]!= "" && para[9]!= "" ){
+            return backData['menzhen_refund']
+        }
+        else {
+            return "必传参数不能为空！"
+        }
+    }
+    else{
+        return "传入参数位数错误！"
+    }
 }
+
 
 T9247=function(para) {
     console.log('T9247交易作废入参:',para)

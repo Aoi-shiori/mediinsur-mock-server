@@ -9,6 +9,8 @@ const f_ReadICCard =require('../businss/f_ReadICCard')
 const download = require('../businss/download')
 const city = require('../businss/city/menzhen')
 const mobile_menzhen = require('../businss/ydyb/menzhen')
+const province_zhuyuan = require('../businss/Province/zhuyuan')
+const city_zhuyuan = require('../businss/city/zhuyuan')
 
 
 
@@ -144,12 +146,123 @@ T8005 = function(req){
     return mobile_menzhen.T8005(req)
 }
 
+//省医保-门诊退费
+T9204 = function(req){
+    console.log("T9204")
+    console.log("接收到的入参为："+req)
+    return menzhen.T9204(req)
+}
+
+//省医保-住院登记
+T9205 = function(req){
+    console.log("T9205")
+    console.log("接收到的入参为："+req)
+    return province_zhuyuan.T9205(req)
+}
+
+
+//省医保-住院信息变动
+T9210 = function(req){
+    console.log("T9210")
+    console.log("接收到的入参为："+req)
+    return province_zhuyuan.T9210(req)
+}
+
+//省医保-住院明细上传
+T9212 = function(req){
+    console.log("T9212")
+    console.log("接收到的入参为："+req)
+    return province_zhuyuan.T9212(req)
+}
+
+//省医保-住院预结算
+T9207 = function(req){
+    console.log("T9207")
+    console.log("接收到的入参为："+req)
+    return province_zhuyuan.T9207(req)
+}
+
+
+//省医保-住院结算
+T9208 = function(req){
+    console.log("T9208")
+    console.log("接收到的入参为："+req)
+    return province_zhuyuan.T9208(req)
+}
+
+
+//省医保-住院结算
+T9215 = function(req){
+    console.log("T9215")
+    console.log("接收到的入参为："+req)
+    return province_zhuyuan.T9215(req)
+}
+
+//省医保-住院结算单据下载
+T9228 = function(req){
+    console.log("T9228")
+    console.log("接收到的入参为："+req)
+    return province_zhuyuan.T9228(req)
+}
+
+
+//市医保-住院登记/家庭病床建床
+T32 = function(req){
+    console.log("T32")
+    console.log("接收到的入参为："+req)
+    return city_zhuyuan.T32(req)
+}
+
+//市医保-住院费用记账
+T33 = function(req){
+    console.log("T33")
+    console.log("接收到的入参为："+req)
+    return city_zhuyuan.T33(req)
+}
+
+//市医保-//住院预结算
+T34 = function(req){
+    console.log("T34")
+    console.log("接收到的入参为："+req)
+    return city_zhuyuan.T34(req)
+}
+
+//市医保-出院结算
+T36 = function(req){
+    console.log("T36")
+    console.log("接收到的入参为："+req)
+    return city_zhuyuan.T36(req)
+}
+
+//市医保-出院退费
+T37 = function(req){
+    console.log("T37")
+    console.log("接收到的入参为："+req)
+    return city_zhuyuan.T37(req)
+}
+
+//市医保-出院退费
+T38 = function(req){
+    console.log("T38")
+    console.log("接收到的入参为："+req)
+    return city_zhuyuan.T38(req)
+}
+
+//市医保-取消住院登记/医保转自费
+T40 = function(req){
+    console.log("T40")
+    console.log("接收到的入参为："+req)
+    return city_zhuyuan.T40(req)
+}
+
+
 module.exports=
 {
     Tf_ReadICCard,
     T9201,
     T9202,
     T9203,
+    T9204,
     T9024,
     T9025,
     T9247,
@@ -164,6 +277,20 @@ module.exports=
     T8001,
     T8002,
     T8004,
-    T8005
+    T8005,
+    T9205,
+    T9210,
+    T9212,
+    T9207,
+    T9208,
+    T9215,
+    T9228,
+    T32,
+    T33,
+    T34,
+    T36,
+    T37,
+    T38,
+    T40
 
 }

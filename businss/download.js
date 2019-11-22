@@ -116,17 +116,13 @@ var backData = Mock.mock({
 T75 = function T75(para) {
     para = util.ParaToArry(para)
     console.log("转化后的入参为："+para)
-    if (para != ""){
-        //卡类型
-        let cardType= util.isContain(para[0],['0','1','2'])
-        if(cardType && para[4]!= "")
-            return backData['department']
-        else{
-            return "传参有误，请检查输入参数"
-        }
+    //卡类型
+    let cardType= util.isContain(para[0],['0','1','2'])
+    if(cardType && para[4]!= ""){
+        return backData['department']
     }
-    else {
-        return "参数不能为空！"
+    else{
+        return "传参有误，请检查输入参数"
     }
 }
 
@@ -139,21 +135,16 @@ T77 = function T77(para){
     //费用类别
     var isClassify = util.isContain(para[4],['1','2'])
     console.log("是否包含："+cardType+" "+isClassify)
-    if (para != ""){
-        if(cardType && isClassify){
-            switch (para[4]) {
-                case '1':
-                    return backData['dictionary_classType'];
-                case '2':
-                    return backData['dictionary_feeType'];
-            }
-        }
-        else {
-            return "传参错误，请检查传入数据！"
+    if(cardType && isClassify){
+        switch (para[4]) {
+            case '1':
+                return backData['dictionary_classType'];
+            case '2':
+                return backData['dictionary_feeType'];
         }
     }
-    else{
-        return "入参不能为空！"
+    else {
+        return "传参错误，请检查传入数据！"
     }
 }
 
@@ -162,21 +153,16 @@ T78 = function T78(para){
     para = util.ParaToArry(para)
     console.log("转化后的入参为："+para)
     let cardType= util.isContain(para[0],['0','1','2'])
-    if (para != ""){
-        if(cardType && para[4]!= ""){
-            if(para[4] == '0'){
-                return backData['disease_default']
-            }
-            else {
-                return backData['disease_other']
-            }
+    if(cardType && para[4]!= ""){
+        if(para[4] == '0'){
+            return backData['disease_default']
         }
-        else{
-            return "传参错误，请检查传入数据！"
+        else {
+            return backData['disease_other']
         }
     }
     else{
-        return "参数不能为空！"
+        return "传参错误，请检查传入数据！"
     }
 }
 
@@ -187,26 +173,21 @@ T54 = function T54(para){
     let cardType= util.isContain(para[0],['0','1','2'])
     //药品诊疗类别
     var type = util.isContain(para[4],['0','1','2'])
-    if(para != ""){
-        if(cardType && type && para[5]!= ""){
-            switch(para[4]){
-                default:
-                    return backData['diagnoseType_other'];
-                    break;
-                case '0':
-                    return backData['diagnoseType_all'];
-                case '1':
-                    return backData['diagnoseType_medicine'];
-                case '2':
-                    return backData['diagnoseType_diagnose'];
-            }
-        }
-        else {
-            return "传参错误，请检查传入数据！"
+    if(cardType && type && para[5]!= ""){
+        switch(para[4]){
+            default:
+                return backData['diagnoseType_other'];
+                break;
+            case '0':
+                return backData['diagnoseType_all'];
+            case '1':
+                return backData['diagnoseType_medicine'];
+            case '2':
+                return backData['diagnoseType_diagnose'];
         }
     }
-    else{
-        return "参数不能为空！"
+    else {
+        return "传参错误，请检查传入数据！"
     }
 }
 

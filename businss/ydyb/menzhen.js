@@ -21,23 +21,18 @@ T8001 = function T8001(para) {
     para = util.ParaToArry(para)
     console.log("转化后的入参为："+para)
     var cardType = util.isContain(para[0],["01",'02','03'])
-    if(para != ""){
-        if(cardType && para[1] != ""){
-            switch (para[0]) {
-                case '01':
-                    return "读医保卡"
-                case '02':
-                    return  backData['patientInfo_scan']
-                case '03':
-                    return "支付令牌读卡"
-            }
-        }
-        else {
-            return '传入参数有误，请检查传参！'
+    if(cardType && para[1] != ""){
+        switch (para[0]) {
+            case '01':
+                return "读医保卡"
+            case '02':
+                return  backData['patientInfo_scan']
+            case '03':
+                return "支付令牌读卡"
         }
     }
     else {
-        return "参数不能为空！"
+        return '传入参数有误，请检查传参！'
     }
 }
 
@@ -45,16 +40,11 @@ T8001 = function T8001(para) {
 //医生处方上传
 T8002 = function T8002(para){
     para = util.ParaToArry(para.trim())
-   if(para!= ""){
-       if(para.length <= 23){
-           return backData['prescription_upload']
-       }
-       else {
-           return "传入参数有误，请检查传参！"
-       }
+   if(para.length <= 23){
+       return backData['prescription_upload']
    }
    else {
-       return "参数不能为空!"
+       return "传入参数有误，请检查传参！"
    }
 }
 
