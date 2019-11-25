@@ -205,6 +205,14 @@ T9228 = function(req){
     return province_zhuyuan.T9228(req)
 }
 
+//签到
+T9253 = function(req){
+    console.log("T9253")
+    console.log("接收到的入参为："+req)
+    return province_zhuyuan.T9253(req)
+}
+
+
 
 //市医保-住院登记/家庭病床建床
 T32 = function(req){
@@ -285,6 +293,7 @@ module.exports=
     T9208,
     T9215,
     T9228,
+    T9253,
     T32,
     T33,
     T34,

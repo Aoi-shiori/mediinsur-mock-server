@@ -7,6 +7,7 @@
     "start": "node ./bin/www",
     "dev": "node ./index.js",
     "build": "webpack --progress --watch --color",
+    "test": "",
     "mock": "node ./mock/mode2/mockServer"
   },
   "keywords": [],
