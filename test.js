@@ -240,6 +240,18 @@ let tt = ['330499100001',
         ''],
     '']
 
+
+// let jsonT9202 ={
+//     'set':tt[0],
+//     'set1':tt[1],
+//     'set2':function (result) {
+//         tt[28].forEach(function (item,index) {
+//
+//         })
+//     },
+//
+// }
+
 // let list={'aa':'',"bb":''}
 // for (let j in tt[28]){
 //     for(let i in Object.keys(list)){

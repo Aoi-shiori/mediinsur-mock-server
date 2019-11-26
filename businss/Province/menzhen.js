@@ -328,8 +328,18 @@ T9247=function(para) {
     para=T.ParaToArry(para)
     // console.log('T9203社会保障卡卡号',  para[4])
     // console.log('转换后结果',  para)
-    let res  = Mock.mock({'T0|1':['$$0~交易成功$$','$$-1~交易失败$$']});//根据随机值返回
-    res=res['T0']
+    let resn=Mock.mock(
+        {'Boolen|8-3': true}
+    )
+    console.log('随机值是：',resn['Boolen'])
+    let res =""
+    if (resn['Boolen']){
+        res = '$$0~交易成功$$'
+    }else {
+        res = '$$-1~交易失败$$'
+    }
+    //let res  = Mock.mock({'T0|1':['$$0~交易成功$$','$$-1~交易失败$$']});//根据随机值返回
+    //res=res['T0']
     console.log('T9247交易作废返回参数:',res)
     return res
 }
